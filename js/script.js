@@ -315,6 +315,8 @@ let MostRquestedOrders=[
     details2:"Served With Free Sauce",
 },
 ] 
+console.log(window.location.href);
+
 let orders=[
    {
     id:3,
