@@ -1686,10 +1686,10 @@ switch(siteRoute){
     case "/payment.html":
         payment();
         break;
-   
-   
+   case "/contact.html":
+     contact();
+    break;
     default:break;
-
 }
 
 
@@ -3213,14 +3213,14 @@ function saveUsersInLocalStorage(users){
 
 
 
-
-
-
 // contact us action
-var contactDetailsBtn=document.getElementById('contactDetailsBtn');
-var contactFormBtn=document.getElementById('contactFormBtn');
-    var contactForm=document.getElementById('contactForm');
-    if(contactForm){
+
+
+function contact(){
+let contactDetailsBtn=document.getElementById('contactDetailsBtn');
+let contactFormBtn=document.getElementById('contactFormBtn');
+let contactForm=document.getElementById('contactForm');
+if(contactForm){
                 contactForm.addEventListener('submit',(e)=>{
                 e.preventDefault();
                 const formData = new FormData(contactForm);
@@ -3244,6 +3244,8 @@ contactFormBtn.addEventListener('click',()=>{
     contactDetails.classList.add('d-none');
 })
 }
+}
+
        
         
 function sendMail(senderName,message,senderEnail){
