@@ -1,0 +1,351 @@
+
+<html >
+    <head>
+        <title>GreenLand-HomePage</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Order Meals website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo 1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+    <body class="bg-info">
+       <div id="floatingIcons">
+               <div class="profile">
+                   <a href="cart.html" class="floatCart d-lg-none" id="floatCart">
+                    <button type="button" class="btn  position-relative  p-0">
+                            <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                            </span>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                            </button>
+                         <!-- <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                        </span> -->
+                    </a>
+                    <a href="account.html">
+                        <span class="fa-stack text-main d-lg-none floatAccount" id="floatAccount">
+                        <!-- <span class="fa-stack text-main d-none floatAccount" id="floatAccount"> -->
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid text-main fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+               </div>
+                <span class="fa-stack text-main d-xl-none floatSearch" id="floatSearch">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+                </span>
+               <div class="loginRegister">
+                 <a href="login.html">
+                    <span class="fa-stack text-main d-lg-none floatLogin" id="floatLogin">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-right-to-bracket fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+                <a href="signUp.html">
+                    <span class="fa-stack text-main d-lg-none floatSignUp" id="floatSignUp">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-user-plus fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+               </div>
+        </div>
+            <!-- <header class="mx-auto"> -->
+            <header class="shadow-lg">
+             <nav class="navbar navbar-expand-lg navbar-light  py-4 fs-7 mx-auto">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo 1.png" alt="GreenLand logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-lg-between" id="navbarSupportedContent">
+                        <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between    flex-lg-grow-2 ">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center flex-lg-grow-2">
+                                <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menue</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="dishes.html">Dishes</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Restaurant
+                                </a>
+                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="policy.html">Privacy and policy</a></li>
+                                    <li><a class="dropdown-item " href="about.html">About Us</a></li>
+                                    <li><a class="dropdown-item " href="aboutGreenland.html">GreenLand 1</a></li>
+                                 </ul>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                             </ul>
+                             <form class="d-flex mb-0 d-none d-xl-flex flex-lg-grow-2 input-container">
+                                     <span class="icon search-icon">
+                                             <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                     <input class="form-control bg-light me-2 py-2 ronded-3" id="search" type="search" placeholder="Search" aria-label="Search">                                              
+                             </form>
+                        </div>
+                  
+                  <div class=" d-flex justify-content-center justify-content-lg-end flex-lg-grow-2"> 
+                       <div class="d-flex ">
+                    <div class="LoginRegister">
+                         <div class=" d-none d-lg-block" id="LoginRegister">
+                            <a class="btn btn-outline-main me-2 px-4"  href="login.html">Login</a>
+                            <a class="btn btn-main px-4" href="signUp.html">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="profile">
+                          <div class="accountIcon d-lg-flex align-items-center text-main d-none" id="accountIcon">
+                           <!-- <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                           <button type="button" class="btn p-0 mt-1 text-main position-relative" onclick="window.location.href='cart.html'">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                            </button>
+                           <div class="d-flex  ms-4 align-items-center">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                    <i class="fa-solid fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <a href="account.html" class="text-decoration-none text-main">
+                                      <span id="accountName" class="mx-2">Shaimaa Kamal</span>
+                                     <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                         </div>
+                        </div>
+                    </div>
+                       </div>
+                    </div>
+                  </div>
+                    </div>
+            </nav>   
+           </header>
+           <main>
+            <section class="banner d-flex align-items-center ps-2 ps-md-5">
+                 <div class="container-fluid">
+                     <div class="row flex-column gy-3">
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                            <div>
+                                <h1 class="text-white fs-0">Crafting your </h1>
+                                <h1 class="text-white fs-0">Exceptional Dining</h1>
+                                <h1 class="text-main fs-0">Reservations</h1>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="text-white fs-6 fw-light">
+                                <p class="mb-0">Reservation is a step into a world of gastronomic wonder. Reserve your</p>
+                                <p>table today and let us paint your culinary dreams into reality.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6"">
+                            <div class="container-fluid bg-white rounded-3  p-2">
+                                <div class="row gx-1">
+                                    <div class="col-4">
+                                        <div >
+                                            <label class="btn btn-white w-100 px-1 px-lg-3 delivery btn-main" for="delivery">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                                                    <path d="M27.9425 21.9979C25.3708 21.9979 23.2786 24.0901 23.2786 26.6618C23.2786 29.2335 25.3708 31.3257 27.9425 31.3257C30.5146 31.3257 32.6064 29.2335 32.6064 26.6618C32.6064 24.0901 30.5142 21.9979 27.9425 21.9979ZM27.9425 28.9937C26.6564 28.9937 25.6105 27.9478 25.6105 26.6618C25.6105 25.3758 26.6564 24.3299 27.9425 24.3299C29.2285 24.3299 30.2744 25.3758 30.2744 26.6618C30.2744 27.9479 29.2285 28.9937 27.9425 28.9937ZM12.0076 21.9979C9.43591 21.9979 7.34375 24.0901 7.34375 26.6618C7.34375 29.2335 9.43591 31.3257 12.0076 31.3257C14.5793 31.3257 16.6715 29.2335 16.6715 26.6618C16.6715 24.0901 14.5793 21.9979 12.0076 21.9979ZM12.0076 28.9937C10.7216 28.9937 9.67569 27.9478 9.67569 26.6618C9.67569 25.3758 10.7216 24.3299 12.0076 24.3299C13.2933 24.3299 14.3396 25.3758 14.3396 26.6618C14.3396 27.9479 13.2937 28.9937 12.0076 28.9937ZM31.0832 8.64843C30.9861 8.45539 30.8372 8.29314 30.6532 8.17976C30.4692 8.06639 30.2573 8.00635 30.0412 8.00635H23.9005V10.3383H29.3222L32.4971 16.6531L34.5811 15.6053L31.0832 8.64843Z" />
+                                                    <path d="M15.624 25.5346H24.4464V27.8666H15.624V25.5346ZM8.51152 25.5346H4.46956C3.82553 25.5346 3.30362 26.0566 3.30362 26.7006C3.30362 27.3446 3.8256 27.8665 4.46956 27.8665H8.51159C9.15562 27.8665 9.67752 27.3445 9.67752 26.7006C9.67752 26.0565 9.15555 25.5346 8.51152 25.5346ZM36.7552 18.4067L34.4617 15.4529C34.3529 15.3124 34.2133 15.1988 34.0537 15.1206C33.8941 15.0425 33.7187 15.0019 33.541 15.002H25.0683V6.84025C25.0683 6.19622 24.5463 5.67432 23.9024 5.67432H4.46956C3.82553 5.67432 3.30362 6.19629 3.30362 6.84025C3.30362 7.48421 3.8256 8.00618 4.46956 8.00618H22.7364V16.1679C22.7364 16.812 23.2583 17.3339 23.9023 17.3339H32.97L34.6681 19.5212V25.5345H31.4422C30.7982 25.5345 30.2763 26.0565 30.2763 26.7004C30.2763 27.3445 30.7982 27.8664 31.4422 27.8664H35.834C36.478 27.8664 36.9999 27.3444 37 26.7004V19.1218C37 18.8629 36.9137 18.6111 36.7552 18.4067ZM8.43383 19.6271H3.07035C2.42632 19.6271 1.90442 20.149 1.90442 20.793C1.90442 21.437 2.42639 21.9589 3.07035 21.9589H8.43376C9.07779 21.9589 9.59969 21.437 9.59969 20.793C9.59977 20.149 9.07779 19.6271 8.43383 19.6271ZM11.1155 15.0409H1.16593C0.521975 15.0409 0 15.5629 0 16.2069C0 16.8509 0.521975 17.3728 1.16593 17.3728H11.1155C11.7596 17.3728 12.2815 16.8508 12.2815 16.2069C12.2815 15.5629 11.7596 15.0409 11.1155 15.0409Z" />
+                                                    <path d="M13.0218 10.4546H3.07218C2.42815 10.4546 1.90625 10.9766 1.90625 11.6205C1.90625 12.2646 2.42822 12.7865 3.07218 12.7865H13.0218C13.6658 12.7865 14.1877 12.2645 14.1877 11.6205C14.1878 10.9766 13.6658 10.4546 13.0218 10.4546Z" />
+                                                </svg>
+                                            <span class="ps-1 fs-7 fw-bold text-second">Delivery</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4" > 
+                                        <div >
+                                            <label class="btn btn-white w-100 px-1 delivery" px-lg-3" for="pick up">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                                                    <path d="M27.9425 21.9979C25.3708 21.9979 23.2786 24.0901 23.2786 26.6618C23.2786 29.2335 25.3708 31.3257 27.9425 31.3257C30.5146 31.3257 32.6064 29.2335 32.6064 26.6618C32.6064 24.0901 30.5142 21.9979 27.9425 21.9979ZM27.9425 28.9937C26.6564 28.9937 25.6105 27.9478 25.6105 26.6618C25.6105 25.3758 26.6564 24.3299 27.9425 24.3299C29.2285 24.3299 30.2744 25.3758 30.2744 26.6618C30.2744 27.9479 29.2285 28.9937 27.9425 28.9937ZM12.0076 21.9979C9.43591 21.9979 7.34375 24.0901 7.34375 26.6618C7.34375 29.2335 9.43591 31.3257 12.0076 31.3257C14.5793 31.3257 16.6715 29.2335 16.6715 26.6618C16.6715 24.0901 14.5793 21.9979 12.0076 21.9979ZM12.0076 28.9937C10.7216 28.9937 9.67569 27.9478 9.67569 26.6618C9.67569 25.3758 10.7216 24.3299 12.0076 24.3299C13.2933 24.3299 14.3396 25.3758 14.3396 26.6618C14.3396 27.9479 13.2937 28.9937 12.0076 28.9937ZM31.0832 8.64843C30.9861 8.45539 30.8372 8.29314 30.6532 8.17976C30.4692 8.06639 30.2573 8.00635 30.0412 8.00635H23.9005V10.3383H29.3222L32.4971 16.6531L34.5811 15.6053L31.0832 8.64843Z" />
+                                                    <path d="M15.624 25.5346H24.4464V27.8666H15.624V25.5346ZM8.51152 25.5346H4.46956C3.82553 25.5346 3.30362 26.0566 3.30362 26.7006C3.30362 27.3446 3.8256 27.8665 4.46956 27.8665H8.51159C9.15562 27.8665 9.67752 27.3445 9.67752 26.7006C9.67752 26.0565 9.15555 25.5346 8.51152 25.5346ZM36.7552 18.4067L34.4617 15.4529C34.3529 15.3124 34.2133 15.1988 34.0537 15.1206C33.8941 15.0425 33.7187 15.0019 33.541 15.002H25.0683V6.84025C25.0683 6.19622 24.5463 5.67432 23.9024 5.67432H4.46956C3.82553 5.67432 3.30362 6.19629 3.30362 6.84025C3.30362 7.48421 3.8256 8.00618 4.46956 8.00618H22.7364V16.1679C22.7364 16.812 23.2583 17.3339 23.9023 17.3339H32.97L34.6681 19.5212V25.5345H31.4422C30.7982 25.5345 30.2763 26.0565 30.2763 26.7004C30.2763 27.3445 30.7982 27.8664 31.4422 27.8664H35.834C36.478 27.8664 36.9999 27.3444 37 26.7004V19.1218C37 18.8629 36.9137 18.6111 36.7552 18.4067ZM8.43383 19.6271H3.07035C2.42632 19.6271 1.90442 20.149 1.90442 20.793C1.90442 21.437 2.42639 21.9589 3.07035 21.9589H8.43376C9.07779 21.9589 9.59969 21.437 9.59969 20.793C9.59977 20.149 9.07779 19.6271 8.43383 19.6271ZM11.1155 15.0409H1.16593C0.521975 15.0409 0 15.5629 0 16.2069C0 16.8509 0.521975 17.3728 1.16593 17.3728H11.1155C11.7596 17.3728 12.2815 16.8508 12.2815 16.2069C12.2815 15.5629 11.7596 15.0409 11.1155 15.0409Z" />
+                                                    <path d="M13.0218 10.4546H3.07218C2.42815 10.4546 1.90625 10.9766 1.90625 11.6205C1.90625 12.2646 2.42822 12.7865 3.07218 12.7865H13.0218C13.6658 12.7865 14.1877 12.2645 14.1877 11.6205C14.1878 10.9766 13.6658 10.4546 13.0218 10.4546Z""/>
+                                                </svg>
+                                                <span class="ps-1 fs-7 fw-bold text-second">Pick UP</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4" >
+                                        <div>
+                                            <label class="btn btn-white delivery w-100 px-1 px-lg-3" for="in restaurant">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                                                <path d="M27.9425 21.9979C25.3708 21.9979 23.2786 24.0901 23.2786 26.6618C23.2786 29.2335 25.3708 31.3257 27.9425 31.3257C30.5146 31.3257 32.6064 29.2335 32.6064 26.6618C32.6064 24.0901 30.5142 21.9979 27.9425 21.9979ZM27.9425 28.9937C26.6564 28.9937 25.6105 27.9478 25.6105 26.6618C25.6105 25.3758 26.6564 24.3299 27.9425 24.3299C29.2285 24.3299 30.2744 25.3758 30.2744 26.6618C30.2744 27.9479 29.2285 28.9937 27.9425 28.9937ZM12.0076 21.9979C9.43591 21.9979 7.34375 24.0901 7.34375 26.6618C7.34375 29.2335 9.43591 31.3257 12.0076 31.3257C14.5793 31.3257 16.6715 29.2335 16.6715 26.6618C16.6715 24.0901 14.5793 21.9979 12.0076 21.9979ZM12.0076 28.9937C10.7216 28.9937 9.67569 27.9478 9.67569 26.6618C9.67569 25.3758 10.7216 24.3299 12.0076 24.3299C13.2933 24.3299 14.3396 25.3758 14.3396 26.6618C14.3396 27.9479 13.2937 28.9937 12.0076 28.9937ZM31.0832 8.64843C30.9861 8.45539 30.8372 8.29314 30.6532 8.17976C30.4692 8.06639 30.2573 8.00635 30.0412 8.00635H23.9005V10.3383H29.3222L32.4971 16.6531L34.5811 15.6053L31.0832 8.64843Z" />
+                                                <path d="M15.624 25.5346H24.4464V27.8666H15.624V25.5346ZM8.51152 25.5346H4.46956C3.82553 25.5346 3.30362 26.0566 3.30362 26.7006C3.30362 27.3446 3.8256 27.8665 4.46956 27.8665H8.51159C9.15562 27.8665 9.67752 27.3445 9.67752 26.7006C9.67752 26.0565 9.15555 25.5346 8.51152 25.5346ZM36.7552 18.4067L34.4617 15.4529C34.3529 15.3124 34.2133 15.1988 34.0537 15.1206C33.8941 15.0425 33.7187 15.0019 33.541 15.002H25.0683V6.84025C25.0683 6.19622 24.5463 5.67432 23.9024 5.67432H4.46956C3.82553 5.67432 3.30362 6.19629 3.30362 6.84025C3.30362 7.48421 3.8256 8.00618 4.46956 8.00618H22.7364V16.1679C22.7364 16.812 23.2583 17.3339 23.9023 17.3339H32.97L34.6681 19.5212V25.5345H31.4422C30.7982 25.5345 30.2763 26.0565 30.2763 26.7004C30.2763 27.3445 30.7982 27.8664 31.4422 27.8664H35.834C36.478 27.8664 36.9999 27.3444 37 26.7004V19.1218C37 18.8629 36.9137 18.6111 36.7552 18.4067ZM8.43383 19.6271H3.07035C2.42632 19.6271 1.90442 20.149 1.90442 20.793C1.90442 21.437 2.42639 21.9589 3.07035 21.9589H8.43376C9.07779 21.9589 9.59969 21.437 9.59969 20.793C9.59977 20.149 9.07779 19.6271 8.43383 19.6271ZM11.1155 15.0409H1.16593C0.521975 15.0409 0 15.5629 0 16.2069C0 16.8709 0.521975 17.3728 1.16593 17.3728H11.1155C11.7596 17.3728 12.2815 16.8508 12.2815 16.2069C12.2815 15.5629 11.7596 15.0409 11.1155 15.0409Z" />
+                                                <path d="M13.0218 10.4546H3.07218C2.42815 10.4546 1.90625 10.9766 1.90625 11.6205C1.90625 12.2646 2.42822 12.7865 3.07218 12.7865H13.0218C13.6658 12.7865 14.1877 12.2645 14.1877 11.6205C14.1878 10.9766 13.6658 10.4546 13.0218 10.4546Z" />
+                                            </svg>
+                                            <span class="ps-1 fs-7 fw-bold text-second">In Restaurant</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            </main> 
+            <section class="categories bg-white px-2 px-md-5">
+                <div class="container-fluid py-5">
+                      <div class="row justify-content-between align-items-center">
+                       <div class="col-8 col-md-6">
+                            <div>
+                                <h2 class="fs-1 text-main fs-side-headers">Top Categories</h2>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="row g-3 justify-content-center justify-content-md-start" id="categories">
+                        <div class=" col-3  col-md-2 col-xxl-1" id="seeAllCategories">
+                            <div class="container-fluid bg-site  rounded-6  h-100">
+                                  <div class="row h-100 py-3 py-md-2 align-items-center flex-column justify-content-center overflow-hidden">
+                                            <div class="col-12">
+                                                    <div class="text-center">
+                                                            <h6 class="text-black">SEE ALL</h6>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                                        <div class="text-center">
+                                                           <a href="categories.html" class="text-decoration-none"> 
+                                                            <i class="fa-solid fs-2 fa-circle-chevron-right arrow-icon"></i>
+                                                          </a>
+                                                        </div>
+                                            </div>    
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="offers bg-site px-1 px-md-5 pt-5 overflow-hidden">
+               <div class="container-fluid">
+                    <div class="row justify-content-between align-items-center">
+                       <div class="col-6">
+                            <div>
+                                <h2 class="fs-1 text-main fs-side-headers">Hot Offers</h2>
+                            </div>
+                       </div>
+                       <div class="col-6 ">
+                             <div class="d-flex  align-items-center fs-6 justify-content-end link-side-headers">
+                                <a class="text-decoration-none pe-2 text-link " href="offers.html">See All Offers</a>
+                                <i class="fa-solid fa-arrow-right text-link "></i>
+                            </div>
+                       </div>
+                    </div>
+
+                    <div id="offersCarsouel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner overflow-visible" id="carsouelContainer">
+                            </div>
+                            
+                    </div>
+               </div>
+            </section>
+
+             <section class="orders bg-site px-1 px-md-5 py-5 overflow-hidden">
+               <div class="container-fluid">
+                    <div class="row justify-content-between align-items-center">
+                       <div class="col-6">
+                            <div>
+                                <h2 class="fs-1 text-main fs-side-headers">Latest Orders</h2>
+                            </div>
+                       </div>
+                       <div class="col-6 ">
+                             <div class="d-flex  align-items-center fs-6 justify-content-end link-side-headers">
+                                <a class="text-decoration-none pe-2 text-link " href="orders.html">See All Orders</a>
+                                <i class="fa-solid fa-arrow-right text-link "></i>
+                            </div>
+                       </div>
+                    </div>
+                     <div class="overflow-visible">
+                             <div>
+                                      <div class="row g-3 flex-nowrap" id="ordersContainer">
+                                      </div>
+                                </div>
+                     </div>         
+               </div>
+            </section>
+
+             <section class="dishes bg-site px-1 px-md-5 pb-5 overflow-hidden">
+               <div class="container-fluid">
+                            <div class="row justify-content-between align-items-center">
+                            <div class="col-6">
+                                    <div>
+                                        <h2 class="fs-1 text-main fs-side-headers">Top Dishes</h2>
+                                    </div>
+                            </div>
+                            <div class="col-6 ">
+                                    <div class="d-flex  align-items-center fs-6 justify-content-end link-side-headers">
+                                        <a class="text-decoration-none pe-2 text-link " href="dishes.html">See All Dishes</a>
+                                        <i class="fa-solid fa-arrow-right text-link "></i>
+                                    </div>
+                            </div>
+                            </div>
+                            <div class="overflow-visible">
+                                <div>
+                                        <div class="row g-3 flex-nowrap" id="dishesContainer"></div>
+                                </div>
+                            </div>         
+               </div>
+            </section>
+            <footer class="bg-footer py-4">
+              <section class="footer mx-auto p-4">
+                 <div class="container-fluid">
+                     <div class="row gy-4">
+                            <div class="col-lg-3">
+                            <div class="text-center text-lg-start">
+                                <img src="images/footer logo.png" alt="logo image" class="footerLogo">
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Services</h4>
+                                    <ul class="list-group fs-6">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="menu.html">Menu</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="dishes.html">Dishes</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="offers.html">Offers</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="categories.html">Categories</a></li>                                       
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Our Brand</h4>
+                                    <ul class="list-group fs-6 ">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="policy.html">Usage Policy</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="about.html">About Us</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="contact.html">Contact Us</a></li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                              <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Contact Us</h4>
+                                    <p class="text-muted">
+                                        emailaddress@mail.com
+                                    </p>
+                                </div>
+                            </div>
+                  </div>
+                 </div>
+                </section>
+            </footer>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

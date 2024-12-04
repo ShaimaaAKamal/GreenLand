@@ -1,0 +1,584 @@
+
+<html>
+    <head>
+        <title>GreenLand-Profile</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Order Meals website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo 1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+    <body>
+            <div id="floatingIcons">
+               <div class="profile">
+                   <a href="cart.html" class="floatCart d-lg-none" id="floatCart">
+                    <button type="button" class="btn  position-relative  p-0">
+                            <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                            </span>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                    </button>
+                         <!-- <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                        </span> -->
+                    </a>
+                    <a href="account.html">
+                        <span class="fa-stack text-main d-lg-none floatAccount" id="floatAccount">
+                        <!-- <span class="fa-stack text-main d-none floatAccount" id="floatAccount"> -->
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid text-main fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+               </div>
+                <span class="fa-stack text-main d-xl-none floatSearch" id="floatSearch">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+                </span>
+               <div class="loginRegister">
+                 <a href="login.html">
+                    <span class="fa-stack text-main d-lg-none floatLogin" id="floatLogin">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-right-to-bracket fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+                <a href="signUp.html">
+                    <span class="fa-stack text-main d-lg-none floatSignUp" id="floatSignUp">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-user-plus fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+               </div>
+           </div>
+            <!-- <header class="mx-auto"> -->
+            <header class="shadow-lg">
+             <nav class="navbar navbar-expand-lg navbar-light  py-4 fs-7 mx-auto">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo 1.png" alt="GreenLand logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-lg-between" id="navbarSupportedContent">
+                        <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between    flex-lg-grow-2 ">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center flex-lg-grow-2">
+                                <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menue</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="dishes.html">Dishes</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Restaurant
+                                </a>
+                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="policy.html">Privacy and policy</a></li>
+                                    <li><a class="dropdown-item " href="about.html">About Us</a></li>
+                                    <li><a class="dropdown-item " href="aboutGreenland.html">GreenLand 1</a></li>
+                                 </ul>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                             </ul>
+                             <form class="d-flex mb-0 d-none d-xl-flex flex-lg-grow-2 input-container">
+                                     <span class="icon search-icon">
+                                             <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                     <input class="form-control bg-light me-2 py-2 ronded-3" id="search" type="search" placeholder="Search" aria-label="Search">                                              
+                             </form>
+                        </div>
+                  
+                  <div class=" d-flex justify-content-center justify-content-lg-end flex-lg-grow-2"> 
+                       <div class="d-flex ">
+                    <div class="LoginRegister">
+                         <div class=" d-none d-lg-block" id="LoginRegister">
+                            <a class="btn btn-outline-main me-2 px-4"  href="login.html">Login</a>
+                            <a class="btn btn-main px-4" href="signUp.html">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="profile">
+                          <div class="accountIcon d-lg-flex align-items-center text-main d-none" id="accountIcon">
+                           <!-- <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                           <button type="button" class="btn p-0 mt-1 text-main position-relative" onclick="window.location.href='cart.html'">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange  cartItemsNo">
+                                0
+                            </span>
+                            </button>
+                           <div class="d-flex  ms-4 align-items-center">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                    <i class="fa-solid fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <a href="account.html" class="text-decoration-none text-main">
+                                      <span id="accountName" class="mx-2">Shaimaa Kamal</span>
+                                     <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                         </div>
+                        </div>
+                    </div>
+                       </div>
+                    </div>
+                  </div>
+                    </div>
+            </nav>   
+           </header>
+           <div class="m-Start-section"></div>
+           <section id="account" class="bg-site py-5">
+              <div class="account mx-auto">
+                  <div class="container-fluid">
+                    <div class="row  g-4">
+                        <div class="col-md-8 col-lg-9 order-1 order-md-0">
+                            <div>
+                                <div class="rounded-top-6 position-relative profileBanner">
+                                    <img src="images/categoriesBackgorund.png" alt="background" class="w-100 h-100">
+                                    <span class="fa-stack fa-4x accountPhoto">
+                                        <i class="fa-solid text-main fa-circle fa-stack-2x"></i>
+                                        <i class="fa-solid fa-user fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-5 rounded-bottom-6" id="personal-information">
+                                <div class="alert alert-success mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                 <div class="alert alert-danger mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                <form  class="mt-5  w-xxl-90 mx-auto">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6">
+                                                <div class="input-container text-main">
+                                                <span class="icon user-icon d-none">
+                                                 <i class="fa-regular fa-user"></i>
+                                                </span>
+                                                <input class="form-control bg-light me-2 py-2 border-0 rounded-5" name="firstName" id="firstName" type="text" placeholder="First Name" aria-label="First Name">                                              
+                                            </div>
+                                             <div class="col-12 px-0 mt-1 d-none" id="firstNameError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Name</small>
+                                            </div>
+                                        </div>
+                                            <!-- <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="firstName" id="firstName" type="text" placeholder="First Name" aria-label="firstName">                                               -->
+                                        </div>
+                                        <div class="col-lg-6">
+                                                <div class="input-container text-main">
+                                                <span class="icon user-icon d-none">
+                                                 <i class="fa-regular fa-user"></i>
+                                                </span>
+                                                <input class="form-control bg-light me-2 py-2 border-0 rounded-5" name="lastName" id="lastName" type="text" placeholder="Last Name" aria-label="Last Name">                                              
+                                            </div>
+                                             <div class="col-12 px-0 mt-1 d-none" id="lastNameError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Name</small>
+                                            </div>
+                                        </div>
+                                            <!-- <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="lastName" id="lastName" type="text" placeholder="Last Name" aria-label="lastName">                                               -->
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <div class="input-container text-main">
+                                                <span class="icon user-icon d-none">
+                                                 <i class="fa-regular fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control bg-light me-2 py-2 border-0 rounded-5" name="mail"  id="mail"  type="email" placeholder="Email Address" aria-label="Email Address">                                              
+                                            </div>
+                                             <div class="col-12 px-0 mt-1 d-none" id="mailError">
+                                                <div>
+                                                    <small class="text-danger fs-9 ">Invalid E-Mail Format</small>
+                                                </div>
+                                            <!-- <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="mail" id="mail" type="email" placeholder="Email Address" aria-label="mail">                                               -->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="input-container text-main">
+                                                <span class="icon phone-icon d-none">
+                                                 <i class="fa-solid fa-phone"></i>
+                                                </span>
+                                                <input class="form-control bg-light me-2 py-2 border-0 rounded-5" name="phoneNumber"  id="phoneNumber" type="text" placeholder="Phone Number" aria-label="Phone Number">                                              
+                                            </div>
+                                             <div class="col-12 px-0 mt-1 d-none" id="phoneError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Phone Number</small>
+                                            </div>
+                                            <!-- <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="phoneNumber" id="phoneNumber" type="text" placeholder="Phone Number" aria-label="phone">                                               -->
+                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                              <div class="input-container text-main">
+                                                <span class="icon phone-icon d-none">
+                                                    <i class="fa-solid fa-calendar-days"></i>
+                                                </span>
+                                                <input class="form-control bg-light me-2 py-2 border-0 rounded-5" name="birthDate" id="birthDate" type="text" placeholder="Birth Date (DD/MM/YYYY)" aria-label="Birth Date (DD/MM/YYYY)">                                              
+                                            </div>
+                                               <div class="col-12 px-0 mt-1 d-none" id="dateError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Date Format.</small>
+                                            </div>
+                                            </div>
+                                            <!-- <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="birthDate" id="birthDate" type="text" placeholder="Birth Date" aria-label="Birthdate">                                               -->
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 pt-3">
+                                        <div class="col-sm-8 col-lg-6  col-xl-5  col-xxl-4">
+                                          <div class="text-muted d-flex justify-content-between align-items-center">
+                                          <span class="ps-1 flex-grow-2 fs-7">Gender :</span>
+                                          <div class="form-check form-check-inline mb-0">
+                                                <input class="form-check-input fs-7" type="radio" name="gender" id="male" value="male">
+                                                <label class="form-check-label fs-7" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline mb-0">
+                                                <input class="form-check-input fs-7" type="radio" name="gender" id="female" value="female">
+                                                <label class="form-check-label fs-7" for="female">Female</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3  pt-4">
+                                        <div class="col-lg-6">
+                                            <div class="form-check text-muted fs-6 ms-1">
+                                                <input class="form-check-input fs-7" type="checkbox" value="yes" name="getOfferDiscount" id="getOfferDiscount">
+                                                <label class="form-check-label fs-7" for="getOfferDiscount">
+                                                    Get Latests Offers and Discounts
+                                                </label>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-success py-2 btn-width fw-light rounded-6">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="bg-white p-5 rounded-bottom-6 d-none" id="address-details">
+                                <div class=" text-secondary  mt-5 mb-3 text-center w-xxl-90 mx-auto d-none" id="noAddresses">
+                                        There is no Addresses
+                                </div>
+                                <div  class="row mt-5 mb-3 gy-3  w-xxl-90 mx-auto d-none" id="addressCards">
+                                </div>
+                                <div  class="row  gy-3  w-xxl-90 mx-auto">
+                                    <div class="text-center mt-4">
+                                        <button class="btn btn-success py-2 btn-width fw-light rounded-6" id="newAddressBtn">Add New Address</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-5 rounded-bottom-6 d-none " id="edit-email">
+                                 <div class="alert alert-success mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                 <div class="alert alert-danger mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                 <form  class="mt-5  w-xxl-90 mx-auto" id="editEmailForm">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <div class="input-container text-main">
+                                                <span class="icon user-icon">
+                                                 <i class="fa-regular fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="mail" type="email" placeholder="New Email Address" aria-label="New Email Address">                                              
+                                                </div>
+                                               <div class="col-lg-6 px-0 mt-1 d-none" id="newMaillError">
+                                                <div>
+                                                    <small class="text-danger fs-9 ">Invalid E-Mail Format</small>
+                                                </div>
+                                             </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <div class="input-container text-main">
+                                                <span class="icon user-icon">
+                                                 <i class="fa-regular fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="re-mail" type="email" placeholder="Re-Enter New Email Address" aria-label="Re-Enter Email Address">                                              
+                                                </div>
+                                               <div class="col-lg-6 px-0 mt-1 d-none" id="reEnterMaillError">
+                                                <div>
+                                                    <small class="text-danger fs-9 ">Invalid E-Mail Format</small>
+                                                </div>
+                                             </div>
+                                            </div>
+                                        </div>  
+                                        <div class="col-lg-6">
+                                             <div class="input-container text-main">
+                                                <span class="icon lock-icon">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                <input type="password" class="form-control password-input  bg-light me-2 py-2 border-0 rounded-5" name="password" placeholder="Password" aria-label="password">
+                                                <span class="icon toggle-icon" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye-slash"></i>
+                                                </span>
+                                                <span class="icon toggle-icon  d-none" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6 px-0 mt-1 d-none" id="passwordError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Password</small>
+                                            </div>
+                                        </div>
+                                        </div>
+                                         <div class="text-center mt-4">
+                                        <button class="btn btn-success py-2 btn-width fw-light rounded-6">Save</button>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="bg-white p-5 rounded-bottom-6 d-none" id="change-password">
+                                <div class="alert alert-success mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                 <div class="alert alert-danger mt-5 w-90 mx-auto d-none py-2 rounded-6 text-center">
+                                       
+                                </div>
+                                 <form  class="mt-5  w-xxl-90 mx-auto">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6">
+                                             <div class="input-container text-main">
+                                                <span class="icon lock-icon">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                <input type="password" class="form-control password-input  bg-light me-2 py-2 border-0 rounded-5" name=currentPassword" placeholder="Current Password" aria-label="Current Password">
+                                                <span class="icon toggle-icon" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye-slash"></i>
+                                                </span>
+                                                <span class="icon toggle-icon  d-none" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6 px-0 mt-1 d-none" id="currentPasswordError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Password</small>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                      <div class="row g-3 mt-2">
+                                        <div class="col-lg-6">
+                                             <div class="input-container text-main">
+                                                <span class="icon lock-icon">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                <input type="password" class="form-control password-input  bg-light me-2 py-2 border-0 rounded-5" name=newPassword" placeholder="New Password" aria-label="New Password">
+                                                <span class="icon toggle-icon" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye-slash"></i>
+                                                </span>
+                                                <span class="icon toggle-icon  d-none" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6 px-0 mt-1 d-none " id="newPasswordError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Password</small>
+                                            </div>
+                                        </div>
+                                        </div>
+                                          <div class="col-lg-6">
+                                             <div class="input-container text-main">
+                                                <span class="icon lock-icon">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                <input type="password" class="form-control password-input  bg-light me-2 py-2 border-0 rounded-5" name=rePassword" placeholder="Re-Password" aria-label="Re-Password">
+                                                <span class="icon toggle-icon" onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye-slash"></i>
+                                                </span>
+                                                <span class="icon toggle-icon  " onclick="togglePassword(this)">
+                                                     <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6 px-0 mt-1 d-none" id="rePasswordError">
+                                            <div>
+                                                <small class="text-danger fs-9 ">Invalid Password</small>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                         <div class="text-center mt-4">
+                                        <button class="btn btn-success py-2 btn-width fw-light rounded-6">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="bg-white p-5 rounded-bottom-6 d-none" id="add-newAddress">
+                                <div  class="mt-5  w-xxl-90 mx-auto">
+                                    <div>
+                                        <div id="map" class=" d-block"></div>
+                                    </div>
+                                    <div class="mt-3">
+                                            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center border border-second rounded-6 p-3">
+                                               <div class="d-flex align-items-center text-black">
+                                                 <span class="pe-2"><i class="fa-solid fa-location-arrow"></i></span>
+                                                 <span id="area">Choose Area On Map</span>
+                                               </div>
+                                               <button class="btn  btn-success mt-3 mt-sm-0 py-1 px-4 fs-7 fw-light rounded-6">Change</button>
+                                            </div>
+                                        
+                                    </div>
+                                    <div class="alert-danger mt-3 text-center py-3 rounded-6 d-none" id="invalidData">
+                                        Address can't be Added because Some Fields has invalid Data.
+                                    </div>
+                                     <div class="alert-success mt-3 text-center py-3 rounded-6 d-none" id="successMessage">
+                                        Address has been added successfully.
+                                    </div>
+                                    <div class="mt-3">
+                                    <form  id="addAddressForm">
+                                        <div class="row g-3">        
+                                            <div class="col-lg-6">
+                                                <div>
+                                                    <div class="input-container text-main">
+                                                    <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="buildingName" type="text" placeholder="Building Name" aria-label="Building Name">                                              
+                                                    </div>
+                                                     <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none ">Invalid Buliding Name Format.</small>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="row g-3 my-1">        
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0  rounded-6" name="aptNo" id="aptNo" type="text" placeholder="APT No." aria-label="APT No.">                                              
+                                                        </div>
+                                                         <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none">Invalid APT No.</small>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6 " name="floor" type="text" placeholder="Floor(Optional)" aria-label="Floor">                                              
+                                                        </div>
+                                                        <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none ">Invalid Floor No.</small>
+                                                    </div>
+                                                </div>  
+                                        </div>
+                                          <div class="row g-3 my-1">        
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" id="street" name="street" type="text" placeholder="Street" aria-label="Street">                                              
+                                                        </div>
+                                                        <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none ">Can't be Empty</small>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="additionDirection" type="text" placeholder="Additional Direction(Optional)" aria-label="Additional Direction">                                              
+                                                        </div>
+                                                        <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none ">Invalid Direction Format</small>
+                                                    </div>
+                                                </div>  
+                                        </div>
+                                          <div class="row g-3 my-1">        
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="phone" id="phone" type="text" placeholder="Phone Number" aria-label="Phone Number">                                              
+                                                        </div>
+                                                        <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none">Invalid Phone Number.</small>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <div class="input-container text-main">
+                                                        <input class="form-control bg-light  py-3 fs-7 border-0 rounded-6" name="addressLabel" type="text" placeholder="Address Label(Optional)" aria-label="Address Label">                                              
+                                                        </div>
+                                                        <small class="text-danger fs-9 col-lg-6 px-0 mt-1 d-none">Invalid AddRESS Lable.</small>
+                                                    </div>
+                                                </div>  
+                                        </div>
+                                         <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-success py-2 btn-width fw-light rounded-6" id="addAddressBtn">Add Address</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 order-0 order-md-1">
+                            <div class="bg-white rounded-6  p-2 d-flex flex-column"> 
+                                <button   class="btn btn-site fw-light fs-6 text-center p-3 rounded-6" id="personalInfoBtn">
+                                    Personal Information
+                                </button>
+                                <button class="btn btn-site fw-light my-2 fs-6 text-center p-3 rounded-6" id="addressDetailsBtn">
+                                    Delivery Addresses
+                                </button>
+                                <button  class="btn btn-site fw-light fs-6 text-center p-3 rounded-6" id="editEmailBtn">
+                                    Edit E-Mail Address
+                                </button>
+                                <button  class="btn btn-site fw-light my-2 fs-6 text-center  p-3 rounded-6" id="changePasswordBtn">
+                                    Change Password
+                                </button>
+                                <button onclick="signOut()" class="btn btn-danger fw-light fs-6 text-white p-3 rounded-6">
+                                    Sign Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+           </section>   
+            <footer class="bg-footer py-4">
+              <section class="footer mx-auto p-4">
+                 <div class="container-fluid">
+                     <div class="row gy-4">
+                            <div class="col-lg-3">
+                            <div class="text-center text-lg-start">
+                                <img src="images/footer logo.png" alt="logo image" class="footerLogo">
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Services</h4>
+                                    <ul class="list-group fs-6">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="menu.html">Menu</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="dishes.html">Dishes</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="offers.html">Offers</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="categories.html">Categories</a></li>                                       
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Our Brand</h4>
+                                    <ul class="list-group fs-6 ">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="policy.html">Usage Policy</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="about.html">About Us</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="contact.html">Contact Us</a></li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                              <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Contact Us</h4>
+                                    <p class="text-muted">
+                                        emailaddress@mail.com
+                                    </p>
+                                </div>
+                            </div>
+                  </div>
+                 </div>
+                </section>
+            </footer>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

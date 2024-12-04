@@ -1,0 +1,284 @@
+
+<html>
+    <head>
+        <title>GreenLand-Shopping Cart</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Order Meals website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo 1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+    <body>
+        
+           <div id="floatingIcons">
+               <div class="profile">
+                   <a href="cart.html" class="floatCart d-lg-none" id="floatCart">
+                    <button type="button" class="btn  position-relative  p-0">
+                            <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                            </span>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                    </button>
+                    </a>
+                    <a href="account.html">
+                        <span class="fa-stack text-main d-lg-none floatAccount" id="floatAccount">
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid text-main fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+               </div>
+                <span class="fa-stack text-main d-xl-none floatSearch" id="floatSearch">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+                </span>
+               <div class="loginRegister">
+                 <a href="login.html">
+                    <span class="fa-stack text-main d-lg-none floatLogin" id="floatLogin">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-right-to-bracket fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+                <a href="signUp.html">
+                    <span class="fa-stack text-main d-lg-none floatSignUp" id="floatSignUp">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-user-plus fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+               </div>
+           </div>
+            <header class="shadow-lg">
+             <nav class="navbar navbar-expand-lg navbar-light  py-4 fs-7 mx-auto">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo 1.png" alt="GreenLand logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-lg-between" id="navbarSupportedContent">
+                        <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between    flex-lg-grow-2 ">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center flex-lg-grow-2">
+                                <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menue</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="dishes.html">Dishes</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Restaurant
+                                </a>
+                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="policy.html">Privacy and policy</a></li>
+                                    <li><a class="dropdown-item " href="about.html">About Us</a></li>
+                                    <li><a class="dropdown-item " href="aboutGreenland.html">GreenLand 1</a></li>
+                                 </ul>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                             </ul>
+                             <form class="d-flex mb-0 d-none d-xl-flex flex-lg-grow-2 input-container">
+                                     <span class="icon search-icon">
+                                             <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                     <input class="form-control bg-light me-2 py-2 ronded-3" id="search" type="search" placeholder="Search" aria-label="Search">                                              
+                             </form>
+                        </div>
+                  
+                  <div class=" d-flex justify-content-center justify-content-lg-end flex-lg-grow-2"> 
+                       <div class="d-flex ">
+                    <div class="LoginRegister">
+                         <div class=" d-none d-lg-block" id="LoginRegister">
+                            <a class="btn btn-outline-main me-2 px-4"  href="login.html">Login</a>
+                            <a class="btn btn-main px-4" href="signUp.html">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="profile">
+                          <div class="accountIcon d-lg-flex align-items-center text-main d-none" id="accountIcon">
+                           <!-- <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                           <button type="button" class="btn p-0 mt-1 text-main position-relative" onclick="window.location.href='cart.html'">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange  cartItemsNo">
+                                0
+                            </span>
+                            </button>
+                           <div class="d-flex  ms-4 align-items-center">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                    <i class="fa-solid fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <a href="account.html" class="text-decoration-none text-main">
+                                      <span id="accountName" class="mx-2">Shaimaa Kamal</span>
+                                     <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                         </div>
+                        </div>
+                    </div>
+                       </div>
+                    </div>
+                  </div>
+                    </div>
+            </nav>   
+           </header>
+           <div class="m-Start-section"></div>
+           <main id="payment" class="bg-site py-5">
+                <div class="parent-container mx-auto px-3 px-xl-0">
+                <div class="container-fluid bg-white p-5">
+                        <div class="row g-3">
+                            <div class="col-12 col-lg-7 col-xl-8 col-xxl-9">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="paypal">
+                                            <img src="images/paypal.png" alt="paypal payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="payStack">
+                                            <img src="images/payStack.png" alt="paystack payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="stripe">
+                                            <img src="images/stripe.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="instamojo">
+                                            <img src="images/instamojo.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="mollie">
+                                            <img src="images/mollie.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="razorpay">
+                                            <img src="images/razorpay.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="bankTransfer">
+                                            <img src="images/BankTransfer.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="sslcommercz">
+                                            <img src="images/sslcommercz.png" alt="stripe payment">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-5 col-xl-4 col-xxl-3 px-3 ox-lg-0">
+                                <div class="row g-2" id="checkoutItems">
+                                </div>
+                            <div class="row mt-2 g-2">
+                                    <div class="col-12">
+                                        <div class="bg-site row px-2 py-4 row gx-4 rounded-6">
+                                            <div class="input-group  rounded-6">
+                                                <input type="text" class="form-control py-3 fs-7" id="promoInput" placeholder="Enter Promo Code" aria-label="Enter Promo Code" aria-describedby="code">
+                                                <span class="input-group-text bg-main py-3 text-white" id="code">Apply Code</span>
+                                            </div>
+                                            <div class="fs-6 d-flex  align-items-center mt-3 text-black justify-content-between fw-bold">
+                                                <span>Subtotal:</span>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                     <span id="subtotal"></span>
+                                                     <span>$</span>
+                                                </div>
+                                            </div>
+                                            <div class="fs-6 d-flex align-items-center text-black justify-content-between fw-bold my-3">
+                                                <span>Discount:</span>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                     <span>-</span>
+                                                     <span id="discount">0</span>
+                                                     <span>%</span>
+                                                </div>
+                                            </div>
+                                            <div class="fs-6 d-flex align-items-center text-black justify-content-between fw-bold border-checkout pb-2">
+                                                <span>Delivery Charges:</span>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <span>+</span>
+                                                     <span id="deliveryChrges">10</span>
+                                                     <span>$</span>
+                                                </div>
+                                            </div>
+                                             <div class="fs-6 d-flex align-items-center text-black justify-content-between fw-bold  pt-2">
+                                                <span>Total:</span>
+                                                <div class="text-main">
+                                                     <span id="total">120$</span>
+                                                     <span>$</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <button class="btn btn-main w-lg-50 mx-auto rounded-6 d-flex align-items-center justify-content-center fs-5">
+                                <span>Place Order</span>
+                                <span class="ps-2"><i class="fa-solid fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+                </div>
+                </div>
+           </main>   
+            <footer class="bg-footer py-4">
+              <section class="footer mx-auto p-4">
+                 <div class="container-fluid">
+                     <div class="row gy-4">
+                            <div class="col-lg-3">
+                            <div class="text-center text-lg-start">
+                                <img src="images/footer logo.png" alt="logo image" class="footerLogo">
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Services</h4>
+                                    <ul class="list-group fs-6">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="menu.html">Menu</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="dishes.html">Dishes</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="offers.html">Offers</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="categories.html">Categories</a></li>                                       
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Our Brand</h4>
+                                    <ul class="list-group fs-6 ">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="policy.html">Usage Policy</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="about.html">About Us</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="contact.html">Contact Us</a></li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                              <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Contact Us</h4>
+                                    <p class="text-muted">
+                                        emailaddress@mail.com
+                                    </p>
+                                </div>
+                            </div>
+                  </div>
+                 </div>
+                </section>
+            </footer>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

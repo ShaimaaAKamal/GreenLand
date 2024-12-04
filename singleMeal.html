@@ -1,0 +1,382 @@
+
+<html>
+  <head>
+        <title>GreenLand-Single Meal</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Order Meals website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/logo 1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+    <body>
+           
+             <div id="floatingIcons">
+               <div class="profile">
+                   <a href="cart.html" class="floatCart d-lg-none" id="floatCart">
+                    <button type="button" class="btn  position-relative  p-0">
+                            <span class="fa-stack text-main"  >
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
+                            </span>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                    </button>
+                    </a>
+                    <a href="account.html">
+                        <span class="fa-stack text-main d-lg-none floatAccount" id="floatAccount">
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid text-main fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+               </div>
+                <span class="fa-stack text-main d-xl-none floatSearch" id="floatSearch">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+                </span>
+               <div class="loginRegister">
+                 <a href="login.html">
+                    <span class="fa-stack text-main d-lg-none floatLogin" id="floatLogin">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-right-to-bracket fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+                <a href="signUp.html">
+                    <span class="fa-stack text-main d-lg-none floatSignUp" id="floatSignUp">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid text-main fa-sm fa-user-plus fa-stack-1x fa-inverse"></i>
+                </span>
+                </a>
+               </div>
+           </div>
+            <header class="shadow-lg">
+             <nav class="navbar navbar-expand-lg navbar-light  py-4 fs-7 mx-auto">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo 1.png" alt="GreenLand logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-lg-between" id="navbarSupportedContent">
+                        <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between    flex-lg-grow-2 ">
+                            <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center flex-lg-grow-2">
+                                <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menue</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="dishes.html">Dishes</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Restaurant
+                                </a>
+                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="policy.html">Privacy and policy</a></li>
+                                    <li><a class="dropdown-item " href="about.html">About Us</a></li>
+                                    <li><a class="dropdown-item " href="aboutGreenland.html">GreenLand 1</a></li>
+                                 </ul>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                             </ul>
+                             <form class="d-flex mb-0 d-none d-xl-flex flex-lg-grow-2 input-container">
+                                     <span class="icon search-icon">
+                                             <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                     <input class="form-control bg-light me-2 py-2 ronded-3" id="search" type="search" placeholder="Search" aria-label="Search">                                              
+                             </form>
+                        </div>
+                  
+                  <div class=" d-flex justify-content-center justify-content-lg-end flex-lg-grow-2"> 
+                       <div class="d-flex ">
+                    <div class="LoginRegister">
+                         <div class=" d-none d-lg-block" id="LoginRegister">
+                            <a class="btn btn-outline-main me-2 px-4"  href="login.html">Login</a>
+                            <a class="btn btn-main px-4" href="signUp.html">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="profile">
+                          <div class="accountIcon d-lg-flex align-items-center text-main d-none" id="accountIcon">
+                           <!-- <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                           <button type="button" class="btn p-0 mt-1 text-main position-relative" onclick="window.location.href='cart.html'">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange  cartItemsNo">
+                                0
+                            </span>
+                            </button>
+                           <div class="d-flex  ms-4 align-items-center">
+                                <span class="fa-stack fa-sm">
+                                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                    <i class="fa-solid fa-sm fa-user fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <a href="account.html" class="text-decoration-none text-main">
+                                      <span id="accountName" class="mx-2">Shaimaa Kamal</span>
+                                     <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                         </div>
+                        </div>
+                    </div>
+                       </div>
+                    </div>
+                  </div>
+                    </div>
+            </nav>   
+           </header>
+           <div class="m-Start-section"></div>
+           <main id="Single" class="bg-site py-5">
+                <div class="parent-container mx-auto px-3 px-xl-0">
+                  <div class="container-fluid bg-white rounded-6 pt-4 pb-5">
+                    <div class="row my-3 w-95 mx-auto">
+                        <div class="col-12">
+                            <h3 class="text-black " id="singlePageName"></h3>
+                        </div>
+                    </div>
+                    <div class="row mb-3 w-95 mx-auto">
+                        <div class="col-12">
+                            <div class=" text-center p-3 bg-site rounded-6">
+                                     <img src="" alt="meal main image"  class="rounded-6 w-25" id="mainBannerImage" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 w-95 mx-auto">
+                        <div class="col-6 col-md-3">
+                            <div class="bg-site p-3 h-100 d-flex align-items-center justify-content-center  rounded-6 slide-image">
+                                 <img src="" alt="meal image 1" class="w-75 singlePageImages" >
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-site h-100 p-3 d-flex align-items-center justify-content-center rounded-6 slide-image">
+                                 <img src="" alt="meal image 2" class="w-75 singlePageImages" >
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-site p-3 h-100 d-flex align-items-center justify-content-center rounded-6  slide-image">
+                                 <img src="" alt="meal image 3" class="w-75 singlePageImages">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-site p-3 h-100 d-flex align-items-center justify-content-center rounded-6  slide-image">
+                                 <img src="" alt="meal image 4 "class="w-75 singlePageImages">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-3 w-95 mx-auto">
+                        <div class="col-12 col-lg-7 col-xl-8 col-xxl-9">
+                            <div class="pt-5">
+                                <ul class="nav nav-pills  bg-site rounded-6 py-2 ps-3 " id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-mealDetails-tab" data-bs-toggle="pill" data-bs-target="#pills-mealDetails" type="button" role="tab" aria-controls="pills-mealDetails" aria-selected="true">Meal Details</button>
+                                    </li>
+                                    <li class="nav-item ms-3" role="presentation">
+                                        <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="false">Reviews</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active text-black shadow-sm p-3 fs-7" id="pills-mealDetails" role="tabpanel" aria-labelledby="pills-mealDetails-tab">
+                                        <p id="detailsPart1">
+                                        </p>
+                                        <p id="detailsPart2">    
+                                        </p>
+                                         <div class="pt-3 text-center">
+                                                 <button class="btn btn-light-2  w-50 rounded-6">
+                                                         <i class="fa-solid fa-cart-shopping"></i>
+                                                        <span>Add to cart</span>
+                                                </button>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade shadow-sm" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                                        <div class="container-fluid">
+                                            <div class="row p-4" id="reviewContainer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-12 col-lg-5 col-xl-4 col-xxl-3">
+                            <div class="pt-5">
+                                <h4 class="text-white mb-0 bg-orange p-2 text-center border-rad-0 rounded-6">Hot Offers</h4>
+                                <div class="bg-site  border-rad-1 p-3 container-fluid">
+                                    <div class="row g-3" id="reviewOffersContainer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+           </main> 
+            <section class="relatedMeals bg-site px-1 px-md-5 pb-5 overflow-hidden">
+                  <h2 class="fs-1 ps-3 text-black fs-side-headers">Related Meals</h2>
+                 <div class="pe-4 scroll">
+                     <div class="container-fluid">
+                        <div class="row g-3 flex-nowrap" id="relatedItemsContainer">
+                            <!-- <div class="col-sm-6  col-lg-4 col-xxl-3">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_!">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div>
+                             <div class="col-sm-6  col-lg-4 col-xxl-3 ">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_2">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div>
+                             <div class="col-sm-6  col-lg-4 col-xxl-3 ">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_3">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div>
+                             <div class="col-sm-6  col-lg-4 col-xxl-3 ">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_4">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div>
+                             <div class="col-sm-6  col-lg-4 col-xxl-3 ">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_5">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div>
+                             <div class="col-sm-6  col-lg-4 col-xxl-3 ">
+                                                <div class="bg-white h-100 rounded-6 d-flex flex-column px-3 py-4 position-relative meal" id="meal_6">
+                                                        <div class="text-center">
+                                                            <img src="images/meal.png" alt="meal photo" class="meal-image"> 
+                                                        </div>
+                                                        <div class="d-flex justify-content-between fw-bolder py-3">
+                                                            <span class="text-black">Dummy Food Item</span>
+                                                            <span class="text-main">$30.00</span>
+                                                        </div>
+                                                        <div class="text-light-2 fs-7 d-flex flex-column">
+                                                            <span>Whole Onion Rings Stuffed With Cheese,</span>
+                                                            <span>Served With Free Sauce</span>
+                                                        </div>
+                                                        <span class="border border-1 border-main rounded-circle wishlist-icon">
+                                                            <i class="fa-solid fa-heart text-main"></i>
+                                                        </span>
+                                                </div>
+                            </div> -->
+                        </div>
+               </div>
+                 </div>
+            </section>
+            <footer class="bg-footer py-4">
+              <section class="footer mx-auto p-4">
+                 <div class="container-fluid">
+                     <div class="row gy-4">
+                            <div class="col-lg-3">
+                            <div class="text-center text-lg-start">
+                                <img src="images/footer logo.png" alt="logo image" class="footerLogo">
+                            </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Services</h4>
+                                    <ul class="list-group fs-6">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="menu.html">Menu</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="dishes.html">Dishes</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="offers.html">Offers</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="categories.html">Categories</a></li>                                       
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Our Brand</h4>
+                                    <ul class="list-group fs-6 ">
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="policy.html">Usage Policy</a></li>                                                                           
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="about.html">About Us</a></li>                                        
+                                        <li class="list-group-item border-0 bg-transparent px-0"><a href="contact.html">Contact Us</a></li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                              <div class="col-lg-3">
+                                <div  class="text-lg-start text-center">
+                                    <h4 class="text-main fs-7">Contact Us</h4>
+                                    <p class="text-muted">
+                                        emailaddress@mail.com
+                                    </p>
+                                </div>
+                            </div>
+                  </div>
+                 </div>
+                </section>
+            </footer>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
