@@ -141,7 +141,7 @@
                             <div class="col-12 col-lg-7 col-xl-8 col-xxl-9">
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6">
-                                        <div class="bg-site text-center rounded-6 paymentMethod" id="paypal">
+                                        <div class="bg-site text-center rounded-6 paymentMethod" id="paypal-button-container">
                                             <img src="images/paypal.png" alt="paypal payment">
                                         </div>
                                     </div>
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="mt-3">
                             <button class="btn btn-main w-lg-50 mx-auto rounded-6 d-flex align-items-center justify-content-center fs-5">
                                 <span>Place Order</span>
                                 <span class="ps-2"><i class="fa-solid fa-arrow-right"></i></span>
@@ -278,6 +278,29 @@
                  </div>
                 </section>
             </footer>
+        <!-- <script src="https://www.paypal.com/sdk/js?client-id=AWqMSdIdKFVOiBncM93zpJ2YIeZXI18cPsbuNc9RXZUrQKtb9NyhOeJKRqFxTec44ofw03Hp8z3hxoRD"></script>
+        <script>
+                paypal.Buttons({
+                    createOrder: function (data, actions) {
+                        // Set up the transaction
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '10.00' // Replace with the transaction amount
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function (data, actions) {
+                        // Capture the funds from the transaction
+                        return actions.order.capture().then(function (details) {
+                            // Show a success message to the buyer
+                            alert('Transaction completed by ' + details.payer.name.given_name);
+                            // Optionally, send the payment details to your server
+                        });
+                    }
+                }).render('#paypal-button-container'); // Display the PayPal button
+            </script> -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/script.js"></script>
     </body>
