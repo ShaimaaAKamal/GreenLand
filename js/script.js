@@ -9,346 +9,12 @@ const cartItemsNo=document.querySelectorAll('.cartItemsNo');
 const noCartItems=document.getElementById('noCartItems');
 let map;
 let area;
-let MostRquestedOrders=[
-    {
-    id:5,
-   itemType:"meal",categoryId:1,
-    popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-    name:"Dummy Food Item",
-    price:30,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:6,
-  itemType:"meal",categoryId:1,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
 
-    name:"Dummy Food Item",
-    price:70,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},
-{
-    id:7,
-  itemType:"meal",categoryId:1,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ], 
-   srcImage:"images/meal.png",
-        bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:100,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:8,
-  itemType:"meal",categoryId:1,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:50,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:9,
-  itemType:"meal",categoryId:2,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:30,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},                                 
-{
-    id:1,
-  itemType:"meal",categoryId:2,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ], 
-   srcImage:"images/meal.png",
-        bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:30,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:2,
-  itemType:"meal",categoryId:2,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:70,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},
-{
-    id:3,
-  itemType:"meal",categoryId:3,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:100,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:4,
-  itemType:"meal",categoryId:3,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:50,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},{
-    id:5,
-  itemType:"meal",categoryId:3,
-popular:false,liked:false, 
-    fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-    fullDetails2:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
-   reviews:
-   [
-     {
-        reviewerName:"Ahmed Mohamed",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Asmaa Hassan",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    },
-    {
-        reviewerName:"Taha Saas",
-        rate:5,
-        reviewMessage:"“There are many variations of passages of Lorem Ipsum available,to majority have into the find end to suffered.”"
-    }
-   ],
-    srcImage:"images/meal.png",
-         bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"],
-
-    name:"Dummy Food Item",
-    price:30,
-    details1:"Whole Onion Rings Stuffed With Cheese,",
-    details2:"Served With Free Sauce",
-},
-] 
 
 let orders=[
    {
     id:3,
-   itemType:"meal",categoryId:4,
+   itemType:"meal",mostRequested:true,categoryId:4,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -416,7 +82,7 @@ popular:false,liked:false,
 },
    {
     id:4,
-   itemType:"meal",categoryId:4,
+   itemType:"meal",mostRequested:true,categoryId:4,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -484,7 +150,7 @@ popular:false,liked:false,
 },
    {
     id:5,
-   itemType:"meal",categoryId:4,
+   itemType:"meal",mostRequested:true,categoryId:4,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -554,7 +220,7 @@ popular:false,liked:false,
 const initialMeals=[
     {
     id:5,
-   itemType:"meal",categoryId:4,
+   itemType:"meal",mostRequested:true,categoryId:4,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -587,7 +253,7 @@ popular:false,liked:false,
     bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"]
 },{
     id:6,
-  itemType:"meal",categoryId:5,
+  itemType:"meal",mostRequested:true,categoryId:5,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -620,7 +286,7 @@ popular:false,liked:false,
 },
 {
     id:7,
-  itemType:"meal",categoryId:5,
+  itemType:"meal",mostRequested:true,categoryId:5,
 popular:false,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -652,7 +318,7 @@ popular:false,liked:false,
      bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"]
 },{
     id:8,
-  itemType:"meal",categoryId:5,
+  itemType:"meal",mostRequested:true,categoryId:5,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -684,7 +350,7 @@ popular:true,liked:false,
      bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"]
 },{
     id:9,
-  itemType:"meal",categoryId:5,
+  itemType:"meal",mostRequested:true,categoryId:5,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -717,7 +383,7 @@ popular:true,liked:false,
 },                                 
 {
     id:1,
-  itemType:"meal",categoryId:6,
+  itemType:"meal",mostRequested:false,categoryId:6,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -749,7 +415,7 @@ popular:true,liked:false,
      bannerImages:["images/meal.png","images/meal.png","images/meal.png","images/meal.png"]
 },{
     id:2,
-  itemType:"meal",categoryId:6,
+  itemType:"meal",mostRequested:false,categoryId:6,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -782,7 +448,7 @@ popular:true,liked:false,
 },
 {
     id:3,
-  itemType:"meal",categoryId:6,
+  itemType:"meal",mostRequested:false,categoryId:6,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -815,7 +481,7 @@ popular:true,liked:false,
 
 },{
     id:4,
-  itemType:"meal",categoryId:6,
+  itemType:"meal",mostRequested:false,categoryId:6,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -848,7 +514,7 @@ popular:true,liked:false,
 
 },{
     id:5,
-  itemType:"meal",categoryId:6,
+  itemType:"meal",mostRequested:false,categoryId:6,
 popular:true,liked:false, 
     fullDetails1:` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -1457,8 +1123,16 @@ switch(siteRoute){
 function index(){
     displayIndexCategories(categories);
     displayIndexOffers(offers);
-    displayCards('ordersContainer',MostRquestedOrders);
+    displayCards('ordersContainer',findMostRequestedOrder());
     displayCards('dishesContainer',popularDishes);
+}
+function findMostRequestedOrder(){
+     const mostRequestedData= meals.filter(mostRequested);
+   return mostRequestedData;
+}
+function mostRequested(item){
+    
+     return item.mostRequested;
 }
 
 function createIndexCard(data,className=""){
