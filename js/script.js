@@ -1837,7 +1837,8 @@ function createAddToCartBtn(ItemData){
 }
 
 function createWishlistIcon(ItemData){
-    const wishContainer=createElement('span',"border border-1  rounded-circle wishlist-icon");
+    const wishListClass=(ItemData.liked)?'wishlist-icon-clicked':"wishlist-icon";
+    const wishContainer=createElement('span',`border border-1  rounded-circle ${wishListClass}`);
     const wishICON=createElement('i',"fa-solid fa-heart text-main");
     wishContainer.appendChild(wishICON);
     wishContainer.addEventListener('click',()=>{
@@ -1845,8 +1846,19 @@ function createWishlistIcon(ItemData){
               wishContainer.classList.toggle('wishlist-icon-clicked');
               if(ItemData.liked) ItemData.liked=false;
               else ItemData.liked=true;
+             uodateLocalStorageDishesAndMenu(ItemData)
     })
     return wishContainer;
+}
+
+function uodateLocalStorageDishesAndMenu(ItemData){
+  if(ItemData.itemType == "dish")
+    localStorage.setItem('dishes', JSON.stringify(dishes));
+  else if(ItemData.itemType == "meal"){
+    localStorage.setItem('meals', JSON.stringify(meals));
+     console.log('inside')
+  }
+  
 }
 
 function CreateOrderCard(orderData,InsideMealContainer){
