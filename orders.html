@@ -15,18 +15,21 @@
         <link rel="stylesheet" href="css/style.css">        
     </head>
     <body>
-           <div id="floatingIcons">
+            <div id="floatingIcons">
                <div class="profile">
-                   <a href="cart.html">
-                         <span class="fa-stack text-main floatCart d-lg-none" id="floatCart" >
-                        <!-- <span class="fa-stack text-main floatCart d-none" id="floatCart" > -->
+                   <a href="cart.html" class="floatCart d-lg-none" id="floatCart">
+                    <button type="button" class="btn  position-relative  p-0">
+                            <span class="fa-stack text-main"  >
                                 <i class="fa-regular fa-circle fa-stack-2x"></i>
                                 <i class="fa-solid text-main fa-xs fa-cart-shopping fa-stack-1x"></i>
-                        </span>
+                            </span>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange cartItemsNo">
+                                0
+                            </span>
+                    </button>
                     </a>
                     <a href="account.html">
                         <span class="fa-stack text-main d-lg-none floatAccount" id="floatAccount">
-                        <!-- <span class="fa-stack text-main d-none floatAccount" id="floatAccount"> -->
                             <i class="fa-regular fa-circle fa-stack-2x"></i>
                             <i class="fa-solid text-main fa-sm fa-user fa-stack-1x fa-inverse"></i>
                         </span>
@@ -51,8 +54,8 @@
                 </a>
                </div>
            </div>
-            <header class="mx-auto">
-             <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fs-7">
+            <header class="shadow-lg">
+             <nav class="navbar navbar-expand-lg navbar-light  py-4 fs-7 mx-auto">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <img src="images/logo 1.png" alt="GreenLand logo">
@@ -70,7 +73,7 @@
                                 <a class="nav-link" href="menu.html">Menue</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link active" href="dishes.html">Dishes</a>
+                                <a class="nav-link" href="dishes.html">Dishes</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,8 +107,13 @@
                     </div>
                     <div class="profile">
                           <div class="accountIcon d-lg-flex align-items-center text-main d-none" id="accountIcon">
-                        <!-- <div class="accountIcon d-flex align-items-center d-none text-main profile" id="accountIcon"> -->
-                          <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a>
+                           <!-- <a href="cart.html" class="text-main"><i class="fa-solid fa-cart-shopping"></i></a> -->
+                           <button type="button" class="btn p-0 mt-1 text-main position-relative" onclick="window.location.href='cart.html'">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 fs-10 translate-middle badge rounded-pill bg-orange  cartItemsNo">
+                                0
+                            </span>
+                            </button>
                            <div class="d-flex  ms-4 align-items-center">
                                 <span class="fa-stack fa-sm">
                                     <i class="fa-solid fa-circle fa-stack-2x"></i>
@@ -115,7 +123,7 @@
                                       <span id="accountName" class="mx-2">Shaimaa Kamal</span>
                                      <i class="fa-solid fa-caret-down"></i>
                                 </a>
-                            </div>
+                         </div>
                         </div>
                     </div>
                        </div>
@@ -124,6 +132,7 @@
                     </div>
             </nav>   
            </header>
+           <div class="m-Start-section"></div>
            <main id="dishes" class="bg-site py-5">
                 <div class="parent-container mx-auto px-3 px-xl-0">
                     <div class="container-fluid  p-2 ps-md-5">
@@ -135,6 +144,7 @@
                             </div>
                              <div >
                                     <div class="row g-3 my-4" id="latestOrders">
+                                        
                                     </div>
                             </div>
 

@@ -9,8 +9,6 @@ const cartItemsNo=document.querySelectorAll('.cartItemsNo');
 const noCartItems=document.getElementById('noCartItems');
 let map;
 let area;
-
-
 let orders=[
    {
     id:3,
@@ -48,6 +46,7 @@ popular:false,liked:false,
   {
     id:3,
    itemType:"dish",
+   mostRequested:true,
    ctaegoryId:1,
     popular:true,liked:false, 
     srcImage:"images/dish.png",
@@ -116,6 +115,7 @@ popular:false,liked:false,
   {
     id:4,
    itemType:"dish",
+   mostRequested:true,
    ctaegoryId:1,
    popular:false,liked:false, 
      srcImage:"images/dish.png",
@@ -184,6 +184,7 @@ popular:false,liked:false,
   {
     id:5,
    itemType:"dish",
+   mostRequested:true,
    ctaegoryId:1,
     popular:false,liked:false, 
     srcImage:"images/dish.png",
@@ -549,7 +550,7 @@ popular:true,liked:false,
 const initialDishes=[
     {
     id:5,
-   itemType:"dish",ctaegoryId:2,
+   itemType:"dish",mostRequested:true,ctaegoryId:2,
 popular:true,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -582,7 +583,7 @@ popular:true,liked:false,
     rate:5,
 },{
     id:6,
-  itemType:"dish",ctaegoryId:2,
+  itemType:"dish",mostRequested:true,ctaegoryId:2,
 popular:true,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -616,7 +617,7 @@ popular:true,liked:false,
 },
 {
     id:7,
-  itemType:"dish",ctaegoryId:2,
+  itemType:"dish",mostRequested:true,ctaegoryId:2,
 popular:true,liked:false,  
     srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -649,7 +650,7 @@ popular:true,liked:false,
     rate:4.8
 },{
     id:8,
-  itemType:"dish",ctaegoryId:3,
+  itemType:"dish",mostRequested:true,ctaegoryId:3,
 popular:false,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -682,7 +683,7 @@ popular:false,liked:false,
     rate:4.2
 },{
     id:9,
-  itemType:"dish",ctaegoryId:3,
+  itemType:"dish",mostRequested:true,ctaegoryId:3,
 popular:false,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -716,7 +717,7 @@ popular:false,liked:false,
 },                                 
 {
     id:1,
-  itemType:"dish",ctaegoryId:3,
+  itemType:"dish",mostRequested:false,ctaegoryId:3,
 popular:false,liked:false,  
     srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -749,7 +750,7 @@ popular:false,liked:false,
     rate:5
 },{
     id:2,
-  itemType:"dish",ctaegoryId:3,
+  itemType:"dish",mostRequested:false,ctaegoryId:3,
 popular:false,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -783,7 +784,7 @@ popular:false,liked:false,
 },
 {
     id:3,
-  itemType:"dish",ctaegoryId:4,
+  itemType:"dish",mostRequested:false,ctaegoryId:4,
 popular:false,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -816,7 +817,7 @@ popular:false,liked:false,
     rate:5
 },{
     id:4,
-  itemType:"dish",ctaegoryId:4,
+  itemType:"dish",mostRequested:false,ctaegoryId:4,
 popular:true,liked:false, 
      srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -849,7 +850,7 @@ popular:true,liked:false,
     rate:5
 },{
     id:5,
-  itemType:"dish",ctaegoryId:4,
+  itemType:"dish",mostRequested:false,ctaegoryId:4,
 popular:true,liked:false, 
   srcImage:"images/dish.png",
     bannerImages:["images/dish.png","images/dish.png","images/dish.png","images/dish.png"],
@@ -881,7 +882,8 @@ popular:true,liked:false,
     noOfReviwes:'89k',
     rate:5
 },
-]  
+]
+
 let meals;
 if(localStorage.getItem('meals'))
     meals=JSON.parse(localStorage.getItem('meals'));
@@ -897,6 +899,17 @@ else{
     dishes=initialDishes;
     localStorage.setItem("dishes",JSON.stringify(initialDishes));
 }
+
+function findMostRequestedOrder(arrayName){
+     const mostRequestedData= arrayName.filter(mostRequested);
+   return mostRequestedData;
+}
+function mostRequested(item){
+    
+     return item.mostRequested;
+}
+
+let mostRequestedOrders=[...findMostRequestedOrder(meals),...findMostRequestedOrder(dishes)];
 
 function getPopularDishes(){
  const popularDishes= dishes.filter(isPopular);
@@ -1115,25 +1128,14 @@ switch(siteRoute){
     default:break;
 }
 
-
-
 //INdex page Creation
-
-
 function index(){
     displayIndexCategories(categories);
     displayIndexOffers(offers);
-    displayCards('ordersContainer',findMostRequestedOrder());
+    displayCards('ordersContainer',mostRequestedOrders);
     displayCards('dishesContainer',popularDishes);
 }
-function findMostRequestedOrder(){
-     const mostRequestedData= meals.filter(mostRequested);
-   return mostRequestedData;
-}
-function mostRequested(item){
-    
-     return item.mostRequested;
-}
+
 
 function createIndexCard(data,className=""){
  const indexClass=(className)?className:"col-md-6  col-lg-4 col-xxl-3 ";
@@ -1343,7 +1345,7 @@ function showCategories(categories){
 }
 
 function showOrders(){
-displayCards('latestOrders',orders);
+displayCards('latestOrders',mostRequestedOrders);
 }
 
 //display single meal details
@@ -2663,21 +2665,36 @@ function contact(){
 let contactDetailsBtn=document.getElementById('contactDetailsBtn');
 let contactFormBtn=document.getElementById('contactFormBtn');
 let contactForm=document.getElementById('contactForm');
-if(contactForm){
-                contactForm.addEventListener('submit',(e)=>{
+checkInputValidation(contactForm.children[0].children[0].children[0],validateName,contactForm.children[0].children[0].children[1],contactForm);
+checkInputValidation(contactForm.children[0].children[1].children[0],validateName,contactForm.children[0].children[1].children[1],contactForm);
+checkInputValidation(contactForm.children[1].children[0].children[0],ValidateMail,contactForm.children[1].children[0].children[1],contactForm);
+checkInputValidation(contactForm.children[2].children[0].children[0],validatePhoneNumber,contactForm.children[2].children[0].children[1],contactForm);
+contactForm.addEventListener('submit',async (e)=>{
                 e.preventDefault();
                 const formData = new FormData(contactForm);
-                sendMail(`${formData.get('First Name')} ${formData.get('Last Name')}`,formData.get('Message'),formData.get('Mail'))
+                if(validateName(formData.get('First Name')) && validateName(formData.get('Last Name')) && ValidateMail(formData.get('Mail')) && validatePhoneNumber(formData.get('Phone Number')) )
+                   {
+                     if(await sendMail(`${formData.get('First Name')} ${formData.get('Last Name')}`,formData.get('Message'),formData.get('Mail')))
+                        {displayElement(successMessage);
+                         hideElement(invalidData);
+                         clearForm(contactForm);}
+                    else{
+                        hideElement(successMessage);
+                        displayElement(invalidData);}
+                  }
+                else {
+                    hideElement(successMessage);
+                    displayElement(invalidData);
+                     }
             })
-    }
-if((contactDetailsBtn)){
-contactDetailsBtn.addEventListener('click',()=>{
+  
+    contactDetailsBtn.addEventListener('click',()=>{
     var contactDetails=document.getElementById('contactDetails');
     var contactForm=document.getElementById('contactForm');
     contactForm.classList.add('d-none');
     contactDetails.classList.remove('d-none');
   
-})}
+})
 
 if((contactFormBtn)){
 contactFormBtn.addEventListener('click',()=>{
@@ -2691,22 +2708,28 @@ contactFormBtn.addEventListener('click',()=>{
 
        
         
-function sendMail(senderName,message,senderEnail){
-            emailjs.init("o3-i7ksFLJZT2C6GV"); // Replace with your EmailJS user ID
+async function sendMail(senderName,message,senderEmail){
+          try{
+               emailjs.init("o3-i7ksFLJZT2C6GV"); // Replace with your EmailJS user ID
                 const templateParams = {
                 to_name: "Green Land",
                 from_name: senderName,
                 message: message,
-                reply_to,senderEnail
+                reply_to:senderEmail
                 };
 
-                emailjs.send("service_e72r6p7", "1", templateParams)
+                emailjs.send("service_e72r6p7", "Temp2", templateParams)
                 .then(response => {
                     console.log("Email sent successfully!", response.status, response.text);
                 })
                 .catch(err => {
                     console.error("Failed to send email", err);
                 });
+                return true;
+          }catch(error){
+            return false;
+          }
+        
         }
 
 
@@ -2732,7 +2755,8 @@ function togglePassword(e){
 // validation functions
 function checkInputValidation(input,func,errorInput,formContainer){
 input.addEventListener('keyup',(e)=>{
-    hideElement(formContainer.previousElementSibling);
+    // if(formContainer.getAttribute('id') != "contactForm")
+        hideElement(formContainer.previousElementSibling);
           if(!func(e.target.value))
             {   showErrorBorder(e.target);
                 displayElement(errorInput);
