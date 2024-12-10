@@ -2755,8 +2755,9 @@ function togglePassword(e){
 // validation functions
 function checkInputValidation(input,func,errorInput,formContainer){
 input.addEventListener('keyup',(e)=>{
-    // if(formContainer.getAttribute('id') != "contactForm")
         hideElement(formContainer.previousElementSibling);
+        if(formContainer.getAttribute('id') == "contactForm")
+                    hideElement(formContainer.previousElementSibling.previousElementSibling);
           if(!func(e.target.value))
             {   showErrorBorder(e.target);
                 displayElement(errorInput);
