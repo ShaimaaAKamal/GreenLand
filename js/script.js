@@ -2665,6 +2665,8 @@ function contact(){
 let contactDetailsBtn=document.getElementById('contactDetailsBtn');
 let contactFormBtn=document.getElementById('contactFormBtn');
 let contactForm=document.getElementById('contactForm');
+const invalidData=document.getElementById('invalidData');
+const successMessage=document.getElementById('successMessage');
 checkInputValidation(contactForm.children[0].children[0].children[0],validateName,contactForm.children[0].children[0].children[1],contactForm);
 checkInputValidation(contactForm.children[0].children[1].children[0],validateName,contactForm.children[0].children[1].children[1],contactForm);
 checkInputValidation(contactForm.children[1].children[0].children[0],ValidateMail,contactForm.children[1].children[0].children[1],contactForm);
@@ -2691,6 +2693,8 @@ contactForm.addEventListener('submit',async (e)=>{
     contactDetailsBtn.addEventListener('click',()=>{
     var contactDetails=document.getElementById('contactDetails');
     var contactForm=document.getElementById('contactForm');
+    hideElement(successMessage);
+    hideElement(invalidData);
     contactForm.classList.add('d-none');
     contactDetails.classList.remove('d-none');
   
@@ -2757,7 +2761,7 @@ function checkInputValidation(input,func,errorInput,formContainer){
 input.addEventListener('keyup',(e)=>{
         hideElement(formContainer.previousElementSibling);
         if(formContainer.getAttribute('id') == "contactForm")
-                    hideElement(formContainer.previousElementSibling.previousElementSibling);
+            hideElement(formContainer.previousElementSibling.previousElementSibling);
           if(!func(e.target.value))
             {   showErrorBorder(e.target);
                 displayElement(errorInput);
