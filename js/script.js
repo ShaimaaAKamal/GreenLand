@@ -1155,14 +1155,29 @@ function createIndexCard(data,className=""){
  }
  navigateToPageFullInfoAfterCardClicking(InsideMealContainer,data);
  const wishCartContainer=createElement('div',"");
- const addtOCartBtn=createAddToCartBtn(data);
+ const cartIndex=checkIndexItemInCartItem(data);
+ if(cartIndex == -1)
+ {
+  const addtOCartBtn=createAddToCartBtn(data,wishCartContainer);
+   wishCartContainer.appendChild(addtOCartBtn);
+ }
+ else{
+    const cartdata=cartItems[cartIndex];
+    const controlQty=createIncreaseAndDescreaseQtyNode(cartdata,true);
+    wishCartContainer.appendChild(controlQty);
+ }
+//  const addtOCartBtn=createAddToCartBtn(data);
  const wishlistIcon=createWishlistIcon(data);
- wishCartContainer.appendChild(addtOCartBtn);
  wishCartContainer.appendChild(wishlistIcon);
 parentContainer.appendChild(InsideMealContainer);
 parentContainer.appendChild(wishCartContainer);
 superNode.appendChild(parentContainer);
 return superNode;
+}
+
+function checkIndexItemInCartItem(data){
+    let exist=findCartItemIndex(data);
+    return exist;
 }
 
 
@@ -1497,16 +1512,18 @@ function createCardImage(srcImage,altValue){
     orderMeaLImageContainer.appendChild(OrderImage);
     return orderMeaLImageContainer;
 }
-function createAddToCartBtn(ItemData){
-   
-    let container=createElement('div', "pt-3");
-    const btn=createElement('button',"btn btn-light-2 w-100 rounded-6 addToCart");
+function createAddToCartBtn(ItemData,parentContainer={}){
+    // let container=createElement('div', "pt-3");
+    let container=createElement('div', "");
+    const btn=createElement('button',"btn btn-light-2 w-100 mt-3 rounded-6 addToCart");
     const cartIcon=createElement('i',"fa-solid fa-cart-shopping pe-2");
     const cartOption=createElement('span',"",[],[],"Add To Cart");
     btn.appendChild(cartIcon);
     btn.appendChild(cartOption);
-    btn.addEventListener('click',()=>{
-        addCartItem(ItemData)
+    btn.addEventListener('click',()=>{ const controlQty=createIncreaseAndDescreaseQtyNode({...ItemData,Qty:1},true);
+    parentContainer.appendChild(controlQty);
+    btn.remove();
+    addCartItem(ItemData);
     })
     container.appendChild(btn);
     return container;
@@ -2272,26 +2289,36 @@ const qtySuperNode=createElement('div',"col-6 col-md-3 col-lg-2 order-2 order-md
 const parentNode=createElement('div',"d-flex justify-content-lg-center");
 const qtySpan=createElement('span',"d-lg-none fw-bold text-black",[],[],"Qty : ");
 parentNode.appendChild(qtySpan);
-const controlQty=createElement('div',"border border-1 border-main rounded-6");
-const DecreaseQtyNode=createDecreaseQty(cartItem);
-controlQty.appendChild(DecreaseQtyNode);
-const qtyNumber=createElement('span',"",[],[],cartItem.Qty);
-controlQty.appendChild(qtyNumber);
-const increaseQtyNode=createIncreaseQty(cartItem);
-controlQty.appendChild(increaseQtyNode);
+const controlQty=createIncreaseAndDescreaseQtyNode(cartItem);
 parentNode.appendChild(controlQty);
 qtySuperNode.appendChild(parentNode);
 return qtySuperNode;
 }
-function createDecreaseQty(cartItem){
+
+function createIncreaseAndDescreaseQtyNode(cartItem,index=false){
+let superNodeClass;
+if(index)
+    superNodeClass="d-flex justify-content-center align-items-center border border-1 text-black border-main mt-3 rounded-6  py-1";
+else
+    superNodeClass="border border-1 border-main rounded-6";
+const controlQty=createElement('div',superNodeClass);
+const DecreaseQtyNode=createDecreaseQty(cartItem,index);
+controlQty.appendChild(DecreaseQtyNode);
+const qtyNumber=createElement('span',"",[],[],cartItem.Qty);
+controlQty.appendChild(qtyNumber);
+const increaseQtyNode=createIncreaseQty(cartItem,index);
+controlQty.appendChild(increaseQtyNode);
+return controlQty;
+}
+function createDecreaseQty(cartItem,index=false){
 const DecreaseQtyNode=createStackElement("fa-stack fa-sm text-link fa-1x rounded-6 decrease","fa-solid fa-square fa-stack-2x","fa-solid fa-minus fa-stack-1x fa-inverse"); 
-decreaseQty(DecreaseQtyNode,cartItem)
+decreaseQty(DecreaseQtyNode,cartItem,index)
 return DecreaseQtyNode;
 }
 
-function createIncreaseQty(cartItem){
+function createIncreaseQty(cartItem,index=false){
 const increaseQtyNode=createStackElement("fa-stack fa-sm fa-1x rounded-6 text-main increase","fa-solid fa-square fa-stack-2x","fa-solid fa-plus fa-stack-1x fa-inverse");
-increaseQty(increaseQtyNode,cartItem);
+increaseQty(increaseQtyNode,cartItem,index);
 return increaseQtyNode;
 }
 function createDeleteIcon(cartItem){
@@ -2333,30 +2360,34 @@ function showcartItems(){
     displayElement(cartItemsContainer);
     displayCartItems();
 }
-function increaseQty(increaseIcon,cartItem){
+function increaseQty(increaseIcon,cartItem,index=false){
      increaseIcon.addEventListener('click',()=>{
         let Qty=Number(increaseIcon.previousElementSibling.innerHTML);
         Qty=Qty+1;
         cartItem['Qty']=Qty;
         updateCartItem(cartItem);
        increaseIcon.previousElementSibling.innerHTML=Qty;
-       increaseIcon.parentNode.parentNode.parentNode.nextElementSibling.innerHTML=`${(cartItem.price * cartItem.Qty)}$`
-      displayCartNumbersPage();
+        displayCartNumbersPage();
+        if(!index)
+            increaseIcon.parentNode.parentNode.parentNode.nextElementSibling.innerHTML=`${(cartItem.price * cartItem.Qty)}$`
     });
 }
 
 
-function decreaseQty(decreaseIcon,cartItem){
+function decreaseQty(decreaseIcon,cartItem,index=false){
      decreaseIcon.addEventListener('click',()=>{
-          let Qty=Number(decreaseIcon.nextElementSibling.innerHTML);
+        console.log('inseide decrease');
+        let Qty=Number(decreaseIcon.nextElementSibling.innerHTML);
         Qty=(Qty ==1) ? 1 :Qty-1;
         decreaseIcon.nextElementSibling.innerHTML=Qty;
         cartItem['Qty']=Qty;
         updateCartItem(cartItem);
-        decreaseIcon.parentNode.parentNode.parentNode.nextElementSibling.innerHTML=`${(cartItem.price * cartItem.Qty)}$`;
         displayCartNumbersPage();
+        if(!index)
+            decreaseIcon.parentNode.parentNode.parentNode.nextElementSibling.innerHTML=`${(cartItem.price * cartItem.Qty)}$`;
     });
 }
+
 function deleteCartItem(deleteIcon,cartItem){
         deleteIcon.addEventListener('click',(e)=>{
         let deletedItemNode=e.target.parentNode.parentNode.parentNode; 
@@ -2372,7 +2403,7 @@ function addCartItem(ItemData){
       if(cardItemIndex == -1)
          cartItems.push({...ItemData,Qty:1});
       else 
-          cartItems[cardItemIndex].Qty=cartItems[cardItemIndex].Qty+1;
+        cartItems[cardItemIndex].Qty=cartItems[cardItemIndex].Qty+1;
        displayCartNumbersPage();
        updateCartLocalStorage()
 }
@@ -2671,10 +2702,12 @@ checkInputValidation(contactForm.children[0].children[0].children[0],validateNam
 checkInputValidation(contactForm.children[0].children[1].children[0],validateName,contactForm.children[0].children[1].children[1],contactForm);
 checkInputValidation(contactForm.children[1].children[0].children[0],ValidateMail,contactForm.children[1].children[0].children[1],contactForm);
 checkInputValidation(contactForm.children[2].children[0].children[0],validatePhoneNumber,contactForm.children[2].children[0].children[1],contactForm);
+checkInputValidation(contactForm.children[3].children[0].children[0],validateEmptyField,contactForm.children[3].children[0].children[1],contactForm);
 contactForm.addEventListener('submit',async (e)=>{
                 e.preventDefault();
                 const formData = new FormData(contactForm);
-                if(validateName(formData.get('First Name')) && validateName(formData.get('Last Name')) && ValidateMail(formData.get('Mail')) && validatePhoneNumber(formData.get('Phone Number')) )
+                if(validateName(formData.get('First Name')) && validateName(formData.get('Last Name')) && ValidateMail(formData.get('Mail')) && validatePhoneNumber(formData.get('Phone Number'))
+                && validateEmptyField(formData.get('Message')) )
                    {
                      if(await sendMail(`${formData.get('First Name')} ${formData.get('Last Name')}`,formData.get('Message'),formData.get('Mail')))
                         {displayElement(successMessage);
@@ -2802,7 +2835,10 @@ function validateDate(date){
     return regex.test(date);
 } 
 
-     
+function validateEmptyField(data) {
+    if(data) return true 
+    else return false;
+} 
                                                        
                                                       
                                                        
