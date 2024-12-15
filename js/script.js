@@ -1,7 +1,8 @@
 let users = (!localStorage.getItem('users'))?[]:JSON.parse(localStorage.getItem('users'));
 let loggedUser=(localStorage.getItem('loggedUser'))?JSON.parse(localStorage.getItem('loggedUser')):{password:''};
 let logged=(!localStorage.getItem('logged'))?false:JSON.parse(localStorage.getItem('logged'));
-let siteRoute=(window.location.pathname == '/')?"/index.html" :window.location.pathname;
+const baseUrl = window.location.pathname.startsWith('/GreenLand/') ? window.location.pathname.replace('/GreenLand/','/')  : window.location.pathname;
+let siteRoute=(baseUrl == '/' )?"/index.html" :baseUrl;
 console.log(siteRoute);
 let accountLinks=document.querySelectorAll('a[href="account.html"]');
 let accountName=document.getElementById('accountName');
