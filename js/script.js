@@ -2456,11 +2456,22 @@ const deliveryAddress=document.getElementById('deliveryAddress');
  displayTotalOrderPrice(totalPrice,discount,feeValue);
  displayDiscountValue(discount);
  displayDeliveryFeeValue(feeValue);
- displayDeFaultDeliveryAddress(deliveryAddress);
+//  displayDeFaultDeliveryAddress(deliveryAddress);
  handleGoToPaymentBtn(deliveryAddress);
+chooseCheckoutAddress();
  await displayMap();
 }
-
+function chooseCheckoutAddress(){
+    const addressOptions=document.getElementsByName('checkoutAddress');
+    const newAddressOption=document.getElementById('newAddressOption');
+    addressOptions.forEach(addressOption =>{
+        addressOption.addEventListener('change',()=>{
+            if(addressOption.getAttribute('value') == "newAddress")
+                displayElement(newAddressOption);
+            else  hideElement(newAddressOption);    
+        })
+    })
+}
 function handleGoToPaymentBtn(deliveryAddress){
  const goToPaymentBtn=document.getElementById('goToPaymentBtn');
  goToPaymentBtn.addEventListener('click',(e)=>{
@@ -2487,15 +2498,15 @@ function displayDeFaultDeliveryAddress(deliveryAddress){
     const addressLabel=deliveryAddress.children[3].children[1].children[0].children[0].children[0];
     const area=document.getElementById('area')
    const defaultaddress=getUserDefaultAddress();
-    if(logged && defaultaddress){
-            area.innerHTML=defaultaddress.area;
-           bulidingName.value=defaultaddress.buildingName;
-           aptNo.value=defaultaddress.aptNo;
-           floor.value=defaultaddress.floor;
-           street.value=defaultaddress.street;
-           additionDirection.value=defaultaddress.additionDirection;
-           phone.value=defaultaddress.phone;
-           addressLabel.value=defaultaddress.addressLabel
+    if(logged ){
+           area.innerHTML=(defaultaddress.area)?defaultaddress.area :"Choose on Map";
+           bulidingName.value=(defaultaddress.buildingName)?defaultaddress.buildingName:"";
+           aptNo.value=(defaultaddress.aptNo)?defaultaddress.aptNo:"";
+           floor.value=(defaultaddress.floor)?defaultaddress.floor:"";
+           street.value=(defaultaddress.street)?defaultaddress.street:"";
+           additionDirection.value=(defaultaddress.additionDirection)?defaultaddress.additionDirection:"";
+           phone.value=(defaultaddress.phone)?defaultaddress.phone:"";
+           addressLabel.value=(defaultaddress.addressLabel)?defaultaddress.addressLabel:"";
     }
 }
 function getUserDefaultAddress(){

@@ -139,7 +139,24 @@
                 <div class="container-fluid bg-white rounded-6 p-5">
                        <div class="row g-lg-5 g-3">
                             <div class="col-12 col-lg-7 col-xl-8 col-xxl-9">
-                                <div>
+                                <div class=" shadow-sm p-4 rounded-6 border border-main mb-3" id="chooseAddress">
+                                    <h5 class="text-main text-main">Choose Checkout Address :</h5>
+                                   <div class="px-3">
+                                       <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="checkoutAddress" value="defaultAddress" checked>
+                                        <label class="form-check-label fs-7 text-main fw-light" for="defaultAddress">
+                                            Default Address
+                                        </label>
+                                        </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="checkoutAddress" value="newAddress" >
+                                        <label class="form-check-label fs-7 text-main fw-light" for="newAddress">
+                                            Enter New Address
+                                        </label>
+                                        </div>
+                                   </div>
+                                </div>
+                                <div class="d-none" id="newAddressOption">
                                     <div>
                                         <div id="map" class=" d-block"></div>
                                     </div>
