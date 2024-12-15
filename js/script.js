@@ -2,6 +2,7 @@ let users = (!localStorage.getItem('users'))?[]:JSON.parse(localStorage.getItem(
 let loggedUser=(localStorage.getItem('loggedUser'))?JSON.parse(localStorage.getItem('loggedUser')):{password:''};
 let logged=(!localStorage.getItem('logged'))?false:JSON.parse(localStorage.getItem('logged'));
 let siteRoute=(window.location.pathname == '/')?"/index.html" :window.location.pathname;
+console.log(siteRoute);
 let accountLinks=document.querySelectorAll('a[href="account.html"]');
 let accountName=document.getElementById('accountName');
 let cartItems=(!localStorage.getItem('cartItems'))?[]:JSON.parse(localStorage.getItem('cartItems'));
