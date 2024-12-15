@@ -2456,9 +2456,8 @@ const deliveryAddress=document.getElementById('deliveryAddress');
  displayTotalOrderPrice(totalPrice,discount,feeValue);
  displayDiscountValue(discount);
  displayDeliveryFeeValue(feeValue);
-//  displayDeFaultDeliveryAddress(deliveryAddress);
+ chooseCheckoutAddress();
  handleGoToPaymentBtn(deliveryAddress);
-chooseCheckoutAddress();
  await displayMap();
 }
 function chooseCheckoutAddress(){
@@ -2467,18 +2466,42 @@ function chooseCheckoutAddress(){
     addressOptions.forEach(addressOption =>{
         addressOption.addEventListener('change',()=>{
             if(addressOption.getAttribute('value') == "newAddress")
-                displayElement(newAddressOption);
-            else  hideElement(newAddressOption);    
+                {addNewCheckOutAddress(newAddressOption);
+                localStorage.setItem('defaultAddressIsShipppingAddress',JSON.stringify(false));  }
+                
+            else  {hideElement(newAddressOption);
+                   localStorage.setItem('defaultAddressIsShipppingAddress',JSON.stringify(true));  
+              }
         })
     })
+}
+function addNewCheckOutAddress(newAddressOption){
+        displayElement(newAddressOption);
+        const deliveryAddress=document.getElementById('deliveryAddress');
+        const aptNo=deliveryAddress.children[1].children[0].children[0].children[0].children[0];
+        const phone=deliveryAddress.children[3].children[0].children[0].children[0].children[0];
+        const street=deliveryAddress.children[2].children[0].children[0].children[0].children[0];
+        validateAdderssInputs(aptNo,phone,street);   
 }
 function handleGoToPaymentBtn(deliveryAddress){
  const goToPaymentBtn=document.getElementById('goToPaymentBtn');
  goToPaymentBtn.addEventListener('click',(e)=>{
     e.preventDefault();
-   const shippingAddress=getShippingAddress(deliveryAddress);
-   localStorage.setItem('shippingAddress',JSON.stringify(shippingAddress));
-   window,location.href="payment.html";
+    if(JSON.parse(localStorage.getItem('defaultAddressIsShipppingAddress'))){
+        localStorage.setItem('shippingAddress',JSON.stringify(getUserDefaultAddress()));
+        window,location.href="payment.html";
+    }
+  else{
+    if(validateNumber(deliveryAddress.children[1].children[0].children[0].children[0].children[0].value)
+            && validatePhoneNumber(deliveryAddress.children[3].children[0].children[0].children[0].children[0].value) &&
+            deliveryAddress.children[2].children[0].children[0].children[0].children[0].value){
+            const shippingAddress=getShippingAddress(deliveryAddress);
+            localStorage.setItem('shippingAddress',JSON.stringify(shippingAddress));
+            window,location.href="payment.html";
+        }
+    }
+  
+  
  })
 }
 function getShippingAddress(deliveryAddress){
@@ -2488,27 +2511,7 @@ for(const [index,value] of addressForm)
  shippingAddress[index]=value  ;
 return  shippingAddress;
 }
-function displayDeFaultDeliveryAddress(deliveryAddress){
-    const bulidingName=deliveryAddress.children[0].children[0].children[0].children[0].children[0];
-    const aptNo=deliveryAddress.children[1].children[0].children[0].children[0].children[0];
-    const floor=deliveryAddress.children[1].children[1].children[0].children[0].children[0];
-    const street=deliveryAddress.children[2].children[0].children[0].children[0].children[0];
-    const additionDirection=deliveryAddress.children[2].children[1].children[0].children[0].children[0];
-    const phone=deliveryAddress.children[3].children[0].children[0].children[0].children[0];
-    const addressLabel=deliveryAddress.children[3].children[1].children[0].children[0].children[0];
-    const area=document.getElementById('area')
-   const defaultaddress=getUserDefaultAddress();
-    if(logged ){
-           area.innerHTML=(defaultaddress.area)?defaultaddress.area :"Choose on Map";
-           bulidingName.value=(defaultaddress.buildingName)?defaultaddress.buildingName:"";
-           aptNo.value=(defaultaddress.aptNo)?defaultaddress.aptNo:"";
-           floor.value=(defaultaddress.floor)?defaultaddress.floor:"";
-           street.value=(defaultaddress.street)?defaultaddress.street:"";
-           additionDirection.value=(defaultaddress.additionDirection)?defaultaddress.additionDirection:"";
-           phone.value=(defaultaddress.phone)?defaultaddress.phone:"";
-           addressLabel.value=(defaultaddress.addressLabel)?defaultaddress.addressLabel:"";
-    }
-}
+
 function getUserDefaultAddress(){
     const userAddress=loggedUser.addresses;
     for(const add of userAddress) 
